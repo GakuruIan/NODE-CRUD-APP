@@ -1,0 +1,40 @@
+<%- include ("includes/_header") %>
+
+<main>
+    <div class="container">
+        <div class="box-nav d-flex-justify-between">
+            <a href="/adduser" class="btn btn-success mt-4">New User</a>
+        </div>
+        <form action="" method="post">
+            <table class="table" >
+                <thead class="dark">
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Gender</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%users.forEach((user,index)=> { %>
+                        <tr>
+                            <td><%= index + 1 %> </td>
+                            <td><%= user.name %> </td>
+                            <td><%= user.email %> </td>
+                            <td><%= user.gender %> </td>
+                            <td><%= user.status %> </td>
+                            <td>
+                                <a href="/update?id=<%= user._id %> " class="btn btn-primary btn-sm">Update</a>
+                                <a id="delete" class="btn btn-danger btn-sm" data-id="<%= user._id %> ">Delete</a>
+                            </td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </form>
+    </div>
+</main>
+
+<%- include ("includes/_footer") %>
