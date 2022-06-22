@@ -5,6 +5,6 @@ The dependencies include:
      body-parser
      dotenv 
      ejs
-    express
-    mongoose
-    morgan
+     express
+     mongoose
+     morgan
